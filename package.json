@@ -1,6 +1,6 @@
 {
   "name": "2ul-top-front",
-  "description": "ReactJS web front for 2ul.top open source shortener service",
+  "description": "ReactJS web front for 2ul.top open-source shortener service",
   "license": "MIT",
   "version": "0.1.0",
   "private": false,

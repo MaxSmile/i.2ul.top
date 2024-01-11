@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // Styled components
+// #FF5 and #08F
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; // Adjust gap between form elements as needed
+    gap: 10px; 
     margin: 20px 0;
 `;
 
@@ -14,7 +15,7 @@ const StyledInput = styled.input`
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 300px; // Adjust width as needed
+    width: 300px;s
 
     &:focus {
         outline: none;
