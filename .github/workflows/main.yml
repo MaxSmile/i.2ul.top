@@ -18,6 +18,9 @@ jobs:
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
           cd /var/www/2ul.top
-          git pull origin main
+          ls -la
+          echo $PATH
+          yarn --version
+          node --version
           yarn install --frozen-lockfile
           yarn build
