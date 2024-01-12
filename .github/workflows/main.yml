@@ -17,10 +17,19 @@ jobs:
         username: ${{ secrets.OCI_USERNAME }}
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
+          echo "Checking the machine ID:"
+          cat /etc/machine-id
+          echo "Changing directory to /var/www/2ul.top"
           cd /var/www/2ul.top
+          echo "Listing directory contents"
           ls -la
+          echo "Displaying PATH"
           echo $PATH
+          echo "Checking Yarn version"
           yarn --version
+          echo "Checking Node version"
           node --version
+          echo "Installing dependencies"
           yarn install --frozen-lockfile
+          echo "Building the project"
           yarn build
