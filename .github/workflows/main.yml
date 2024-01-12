@@ -16,7 +16,6 @@ jobs:
         host: ${{ secrets.OCI_HOST }}
         username: ${{ secrets.OCI_USERNAME }}
         key: ${{ secrets.OCI_SSH_KEY }}
-        port: ${{ secrets.OCI_PORT }}
         script: |
           cd /var/www/2ul.top
           git pull origin main
