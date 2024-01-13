@@ -17,6 +17,7 @@ jobs:
         username: ${{ secrets.OCI_USERNAME }}
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
+          source ~/.bashrc
           echo "Checking the machine ID:"
           cat /etc/machine-id
           echo "Changing directory to /var/www/2ul.top"
