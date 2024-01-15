@@ -18,6 +18,7 @@ jobs:
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
           source ~/.bashrc
+          which yarn
           echo "Checking the machine ID:"
           cat /etc/machine-id
           echo "Changing directory to /var/www/2ul.top"
