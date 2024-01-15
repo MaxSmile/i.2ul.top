@@ -19,14 +19,10 @@ jobs:
         script: |
           echo "Sourcing NVM"
           source ~/.nvm/nvm.sh
-          nvm use 20
-          which yarn
           echo "Checking the machine ID:"
           cat /etc/machine-id
           echo "Changing directory to /var/www/2ul.top"
           cd /var/www/2ul.top
-          echo "Listing directory contents"
-          ls -la
           echo "Displaying PATH"
           echo $PATH
           echo "Checking Yarn version"
