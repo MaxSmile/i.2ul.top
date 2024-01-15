@@ -17,7 +17,9 @@ jobs:
         username: ${{ secrets.OCI_USERNAME }}
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
-          source ~/.bashrc
+          echo "Sourcing NVM"
+          source ~/.nvm/nvm.sh
+          nvm use 20
           which yarn
           echo "Checking the machine ID:"
           cat /etc/machine-id
