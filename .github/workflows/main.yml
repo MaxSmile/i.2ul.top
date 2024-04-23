@@ -17,6 +17,9 @@ jobs:
         username: ${{ secrets.OCI_USERNAME }}
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
+          echo "Make sure network is fine"
+          sudo iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+          sudo iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
           echo "Sourcing NVM"
           source ~/.nvm/nvm.sh
           echo "Changing directory to /var/www/2ul.top"
