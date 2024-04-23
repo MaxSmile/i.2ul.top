@@ -28,6 +28,7 @@ jobs:
           yarn --version
           echo "Checking Node version"
           node --version
+          git pull
           echo "Installing dependencies"
           yarn install --frozen-lockfile
           echo "Building the project"
