@@ -1,6 +1,6 @@
-# 2ul.top Web Front
+# 2ul.top URL Shortener 
 
-This is the official ReactJS web front for [2ul.top](https://2ul.top), an open-source URL shortening service developed by Vasilkoff CY Ltd. The project is designed to showcase DevOps best practices and is structured for easy understanding and contribution.
+This is the official web project for [2ul.top](https://2ul.top), an open-source URL shortening service developed by Vasilkoff CY Ltd. The project is designed to showcase DevOps best practices and is structured for easy understanding and contribution.
 
 ## DevOps Best Practices
 
@@ -27,13 +27,30 @@ The 2ul.top project exemplifies several DevOps best practices, showcasing effici
 7. **Collaboration and Agile Development**:
    - Emphasizing an open-source and collaborative approach, the project welcomes contributions and fosters an agile development environment. This ensures a continuous and adaptive improvement process, aligning with modern software development methodologies.
 
-
 ## Features
 
 - ReactJS for a dynamic, single-page application experience.
 - Integration with a Node.js/Express backend.
+- SQLite database for efficient and lightweight data storage.
 - Styled-components for styling.
 - Open-source MIT license.
+
+## Business Model
+
+### Free Tier
+- Basic URL shortening
+- QR code generation
+- Custom links
+- Standard analytics (basic click tracking)
+- Ads displayed for 5 seconds before redirect
+- Links remain active for one month after the last hit
+
+### Premium Tier
+- No ads
+- Custom redirection page delay with custom content or immediate redirection
+- Bulk URL shortening
+- Custom analytics (detailed insights into user behavior, geographic data, device data, etc.)
+- Priority support
 
 ## Prerequisites
 
@@ -43,20 +60,19 @@ Before you begin, ensure you have the following installed:
 
 ## Installation
 
+**Install Dependencies**
 
- **Install Dependencies**
+```sh
+yarn
+```
 
-   ```sh
-   yarn
-   ```
+**Running the Application Locally**
 
- **Running the Application Locally**
+```sh
+yarn start
+```
 
-   ```sh
-   yarn start
-   ```
-
-   This will start the development server on `http://localhost:3000`.
+This will start the development server on `http://localhost:3000`.
 
 ## Contributing
 
@@ -74,8 +90,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Vasilkoff CY Ltd - [dev@vasilkoff.com](mailto:dev@vasilkoff.com)
+Vasilkoff CY Ltd - [maxim@vasilkoff.com](mailto:maxim@vasilkoff.com)
 
 Project page: [https://vasilkoff.com/portfolio/2ul-top](https://vasilkoff.com/portfolio/2ul-top)
-
-
