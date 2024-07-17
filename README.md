@@ -2,6 +2,8 @@
 
 This is the official web project for [2ul.top](https://2ul.top), an open-source URL shortening service developed by Vasilkoff CY Ltd. The project is designed to showcase DevOps best practices and is structured for easy understanding and contribution.
 
+## Why NextJS
+
 ## DevOps Best Practices
 
 The 2ul.top project exemplifies several DevOps best practices, showcasing efficient software development and deployment processes. Key practices include:
