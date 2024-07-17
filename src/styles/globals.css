@@ -1,0 +1,77 @@
+@import '~react-modal-video/css/modal-video.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2000ms;
+    }
+}
+
+body {
+    @apply font-base text-body bg-gray-50 leading-loose;
+}
+
+p:not(:last-child) {
+    @apply mb-4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply text-dark;
+}
+
+h1, h2, h3, h4 {
+    @apply font-bold;
+}
+
+h5, h6 {
+    @apply font-semibold;
+}
+
+ul, ol {
+    @apply p-0 m-0 list-none;
+}
+
+/*
+    Container
+ */
+.container {
+    @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]
+}
+
+/*
+    Navbar
+*/
+
+.nav li a:hover span {
+    transform: translate3d(0, -12px, 0);
+    @apply opacity-0;
+}
+
+
+/*
+    Icon Spin
+*/
+.icon-spin {
+    animation: icon-spin 2s infinite linear;
+}
+
+@-webkit-keyframes icon-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes icon-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}

@@ -1,44 +1,30 @@
 {
-  "name": "2ul-top-front",
-  "description": "ReactJS web front for 2ul.top open-source shortener service",
+  "name": "2ul-next-preact",
+  "version": "1.0.0",
+  "main": "index.js",
   "license": "MIT",
-  "version": "0.1.0",
-  "private": false,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "genversion": "^3.2.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.2",
-    "react-scripts": "5.0.1",
-    "styled-components": "^6.1.8",
-    "web-vitals": "^2.1.4"
-  },
+  "private": true,
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "hamburger-react": "^2.5.1",
+    "next": "^14.2.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.2.1",
+    "react-modal-video": "^2.0.2",
+    "react-scroll": "^1.9.0",
+    "react-weblineindia-qrcode-generator": "^1.0.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwindcss": "^3.4.5"
   }
 }
