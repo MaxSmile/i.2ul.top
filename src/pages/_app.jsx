@@ -5,7 +5,7 @@ const App = ({Component, pageProps}) => {
     return (
         <>
             <Head>
-                <title>Free URL Shortener - {about.name}</title>
+                <title>{`Free URL Shortener - ${about.name}`}</title>
             </Head>
             <Component {...pageProps} />
         </>
