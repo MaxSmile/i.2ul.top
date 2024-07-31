@@ -11,7 +11,7 @@ const HeroArea = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/urls', {
+            const response = await fetch('https://api.2ul.top/urls', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
