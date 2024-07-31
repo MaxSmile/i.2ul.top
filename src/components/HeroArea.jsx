@@ -5,12 +5,13 @@ import { IoCopyOutline } from 'react-icons/io5';
 
 const HeroArea = () => {
     const [url, setUrl] = useState('');
-    const [result, setResult] = useState(about.url);
+    const [result, setResult] = useState('');
+    const [isError, setIsError] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://api.2ul.top/urls', {
+            const response = await fetch('http://localhost:3001/urls', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,18 +23,21 @@ const HeroArea = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                setResult(`https://2ul.top/${data.mappingID}`);
+                setResult(data.mappingID);
+                setIsError(false);
             } else {
                 const errorData = await response.json();
                 setResult(`Error: ${errorData.error}`);
+                setIsError(true);
             }
         } catch (error) {
             setResult(`Error: ${error.message}`);
+            setIsError(true);
         }
     };
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(result).then(() => {
+        navigator.clipboard.writeText(`https://2ul.top/${result}`).then(() => {
             alert('Copied to clipboard!');
         }).catch((err) => {
             console.error('Error copying to clipboard', err);
@@ -50,7 +54,6 @@ const HeroArea = () => {
                     Transform long, unwieldy URLs into concise, shareable links with {about.name} - Free URL Shortener
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-
                     <div>
                         <form className="flex flex-col items-center gap-4 mt-6" onSubmit={handleSubmit}>
                             <input
@@ -60,7 +63,6 @@ const HeroArea = () => {
                                 onChange={(e) => setUrl(e.target.value)}
                                 className="p-2 border border-gray-300 rounded w-full md:w-96"
                             />
-                            
                             <button type="submit" className="p-2 bg-blue-600 text-white rounded hover:bg-blue-500 mt-4">
                                 Shorten URL
                             </button>
@@ -68,34 +70,28 @@ const HeroArea = () => {
                                 Would you like to use a custom name?
                             </a>
                         </form>
-
-
                     </div>
                     <div>
                         {result && (
-                            <div className="mt-4 text-lg text-center text-gray-700">
-                                {result.startsWith('Error') ? result : (
+                            <div className="mt-4 text-lg text-center">
+                                {isError ? (
+                                    <span className="text-red-500">{result}</span>
+                                ) : (
                                     <div className="flex items-center">
-                                        <input
-                                            type="text"
-                                            value={result}
-                                            readOnly
-                                            className="p-0 rounded w-full md:w-96 mr-2"
-                                        />
-                                        
+                                        <span className="p-0 rounded w-full md:w-96 mr-2 text-gray-600">
+                                            2UL.top/<span className="text-blue-600">{result}</span>
+                                        </span>
                                         <IoCopyOutline size={20} title='Copy' className="cursor-pointer" onClick={copyToClipboard} />
-                                        
                                     </div>
                                 )}
                             </div>
                         )}
-                        <div className='mt-4 flex justify-center '>
-                            <QRCode value={result} size={256} />
+                        <div className='mt-4 flex justify-center'>
+                            {!isError && <QRCode value={`https://2ul.top/${result}`} size={256} />}
                         </div>
-
                     </div>
-                    <p>QR code contains the shortened URL</p>
                 </div>
+                <p className="mt-4 text-gray-600 text-center">QR code contains the shortened URL</p>
                 <div>
                     <h2 className="text-2xl sm:text-[45px] md:text-[55px] font-light mt-16">
                         Simplify Your Life
@@ -104,7 +100,6 @@ const HeroArea = () => {
                         2UL.top is a free tool to shorten URLs and generate short links. Our URL shortener allows you to easily convert long URLs into short, manageable links that are easy to share.
                     </p>
                 </div>
-
             </div>
         </section>
     );

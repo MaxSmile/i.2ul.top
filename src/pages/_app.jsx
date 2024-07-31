@@ -1,3 +1,4 @@
+// pages/_app.js
 import Head from "next/head";
 import about from "../data/about.json";
 import '../styles/globals.css';
