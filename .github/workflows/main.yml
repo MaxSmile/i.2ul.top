@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: SSH and Deploy
       uses: appleboy/ssh-action@master
       with:
@@ -20,16 +23,43 @@ jobs:
           echo "Make sure network is fine"
           sudo iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
           sudo iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+
           echo "Sourcing NVM"
           source ~/.nvm/nvm.sh
+
           echo "Changing directory to /var/www/2ul.top"
           cd /var/www/2ul.top
+
+          echo "Pulling latest changes from main"
+          git pull origin main
+
           echo "Checking Yarn version"
           yarn --version
+
           echo "Checking Node version"
           node --version
-          git pull
+
           echo "Installing dependencies"
           yarn install --frozen-lockfile
+
           echo "Building the project"
           yarn build
+
+          echo "Stopping existing PM2 process"
+          pm2 stop ecosystem.config.js || true
+
+          echo "Starting PM2 process"
+          pm2 start ecosystem.config.js --env production
+
+          echo "Saving PM2 process list"
+          pm2 save
+
+    - name: Verify Deployment
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.OCI_HOST }}
+        username: ${{ secrets.OCI_USERNAME }}
+        key: ${{ secrets.OCI_SSH_KEY }}
+        script: |
+          echo "Checking PM2 status"
+          pm2 status
