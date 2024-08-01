@@ -61,5 +61,8 @@ jobs:
         username: ${{ secrets.OCI_USERNAME }}
         key: ${{ secrets.OCI_SSH_KEY }}
         script: |
+          echo "Sourcing NVM"
+          source ~/.nvm/nvm.sh
+
           echo "Checking PM2 status"
           pm2 status

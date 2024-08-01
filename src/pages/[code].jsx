@@ -9,7 +9,8 @@ export default function CodePage() {
     return (
         <Layout>
         <div className="flex flex-col justify-center items-center min-h-screen bg-white">
-            <p className="text-3xl font-bold">{code}</p>
+            
+            <p className="text-3xl font-bold">Code: {code}</p>
         </div>
         </Layout>
     );
