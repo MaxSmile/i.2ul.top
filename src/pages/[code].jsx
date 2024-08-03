@@ -5,7 +5,8 @@ import Layout from './_layout';
 
 export default function CodePage() {
     const router = useRouter();
-    const { code } = router.query;
+     const { code } = router.query;
+     console.log(router.query)
     return (
         <Layout>
             <div className="flex flex-col justify-center items-center min-h-screen bg-white">
