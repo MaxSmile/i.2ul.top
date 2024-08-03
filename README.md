@@ -2,6 +2,28 @@
 
 This is the official web project for [2ul.top](https://2ul.top), an open-source URL shortening service developed by Vasilkoff CY Ltd. The project is designed to showcase DevOps best practices and is structured for easy understanding and contribution.
 
+## TODO
+
+- [ ] Add version display at the bottom
+- [ ] Add GitHub link
+- [ ] Add About page
+- [ ] Add FAQ 
+- [ ] Add Contact page
+- [ ] Add Privacy policy
+- [ ] Add Terms of service
+- [ ] Add Pricing page (should it be hosted on client.2ul.top?)
+- [ ] Add validations to the form (empty entry, too long, invalid URL)
+- [ ] Add Google Analytics
+- [ ] Add Google Tag Manager
+- [ ] Add Open Graph meta tags
+- [ ] Add Twitter meta tags
+- [ ] Add Facebook meta tags
+- [ ] Add LinkedIn meta tags
+- [ ] Make Logo SVG
+- [ ] Make redirect page
+- [ ] Make QR code page
+- [ ] Add Features page
+
 ## Why NextJS
 
 ## DevOps Best Practices
