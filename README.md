@@ -4,8 +4,8 @@ This is the official web project for [2ul.top](https://2ul.top), an open-source 
 
 ## TODO
 
-- [ ] Add version display at the bottom
-- [ ] Add GitHub link
+- [x] Add version display at the bottom
+- [x] Add GitHub link
 - [ ] Add About page
 - [ ] Add FAQ 
 - [ ] Add Contact page

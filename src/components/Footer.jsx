@@ -4,7 +4,8 @@ import {AiFillHeart} from "react-icons/ai";
 import {IoIosArrowUp} from "react-icons/io";
 import SocialMedia from "./SocialMedia";
 import about from "../data/about.json";
-import Navbar from "./Navbar";
+import version from "../version.js";
+import { FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
     return (
@@ -12,16 +13,20 @@ const Footer = () => {
             <div className="container">
                 <div className="text-center lg:text-left lg:flex justify-between items-center">
                     <div className="flex justify-between items-center">
-                        <Logo /><p>{about.name} - Free URL Shortener</p>
+                        <Logo /><p>{about.name} - Free URL Shortener
+                        <a href="https://github.com/MaxSmile/2ul.top" target="_blank"><FaGithub className="inline ml-2" /> <span className="text-xs text-gray-500 hover:underline">v.{version} </span> </a>
+                        </p>
+                        
                     </div>
                     
                     <p>
                     {/* <Navbar/> */}
-                    {/* <SocialMedia className="mt-10" /> */}
+                    {/*  */}
                     {/* Copyright */}
-                &copy;2012-{new Date().getFullYear()} <a href="https://vasilkoff.com" target="_blank">Vasilkoff Ltd - Web Development and Design</a> 
+                &copy;2012-{new Date().getFullYear()} <a href="https://vasilkoff.com" target="_blank" className="hover:underline">Vasilkoff Ltd - Web Development and Design</a> 
+                
                     </p>
-                    
+                    {/* <SocialMedia className="mt-10" /> */}
                 </div>
                 
                 
