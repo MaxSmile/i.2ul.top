@@ -6,12 +6,12 @@ This is the official web project for [2ul.top](https://2ul.top), an open-source 
 
 - [x] Add version display at the bottom
 - [x] Add GitHub link
-- [ ] Add About page
+- [x] Add About page
 - [ ] Add FAQ 
 - [ ] Add Contact page
-- [ ] Add Privacy policy
-- [ ] Add Terms of service
-- [ ] Add Pricing page (should it be hosted on client.2ul.top?)
+- [x] Add Privacy policy
+- [x] Add Terms of service
+- [x] Add Pricing page
 - [ ] Add validations to the form (empty entry, too long, invalid URL)
 - [ ] Add Google Analytics
 - [ ] Add Google Tag Manager

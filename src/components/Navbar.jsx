@@ -1,33 +1,20 @@
-import {Link} from "react-scroll";
+import { Link } from "react-scroll";
 import navbar from "../data/navbar.json";
-import {checkExternalLink} from "../utils/checkExternalLink";
 
-const Navbar = ({className}) => {
+const Navbar = ({ className }) => {
     return (
         <nav className={`navbar hidden sm:block ${className ?? ""}`}>
             <ul className="nav flex space-x-10">
                 {navbar.map(item => (
                     <li key={item.id}>
-                        {checkExternalLink(item.href) ? (
-                            <a
-                                href={item.href} target="_blank"
-                                data-hover={item.name.toLowerCase()}
-                                className={`block font-medium text-sm relative cursor-pointer after:duration-300 ${navItemHoverStyle}`}
-                            >
-                                <span className="block duration-300">{item.name}</span>
-                            </a>
-                        ) : (
-                            <Link
-                                spy={true}
-                                smooth={true}
-                                to={item.href}
-                                activeClass={navItemActiveStyle}
-                                data-hover={item.name.toLowerCase()}
-                                className={`block font-medium text-sm relative cursor-pointer after:duration-300 ${navItemHoverStyle}`}
-                            >
-                                <span className="block duration-300">{item.name}</span>
-                            </Link>
-                        )}
+                        <a
+                            href={item.href}
+                            data-hover={item.name.toLowerCase()}
+                            className={`block font-medium text-sm relative cursor-pointer after:duration-300 ${navItemHoverStyle}`}
+                        >
+                            <span className="block duration-300">{item.name}</span>
+                        </a>
+
                     </li>
                 ))}
             </ul>
