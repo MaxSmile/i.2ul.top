@@ -1,15 +1,19 @@
 {
   "name": "2ul-next-preact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-patch": "yarn version --patch && genversion src/version.js && next build",
+    "build-minor": "yarn version --minor && genversion src/version.js && next build",
+    "build-major": "yarn version --major && genversion src/version.js && next build"
   },
   "dependencies": {
+    "genversion": "^3.2.0",
     "hamburger-react": "^2.5.1",
     "next": "^14.2.5",
     "prop-types": "^15.8.1",
