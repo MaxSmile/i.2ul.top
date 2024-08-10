@@ -17,7 +17,7 @@ module.exports = {
                     DEFAULT: "#FFFFFF",
                     "light": "#f3f2f2"
                 },
-                dark: "#202020"
+                dark: "#1C546A"
             },
             fontFamily: {
                 base: ['"Montserrat"', 'sans-serif']

@@ -2,7 +2,7 @@ import Image from "next/image";
 import about from "../data/about.json";
 import SectionTitle from "./SectionTitle";
 
-const HomeAbout = () => {
+const HomeAboutSection = () => {
     return (
         <section className="pt-20 lg:pt-24 pb-16 lg:pb-32 bg-white" id="home-about">
             <div className="container mx-auto px-4">
@@ -45,4 +45,4 @@ const HomeAbout = () => {
     );
 };
 
-export default HomeAbout;
+export default HomeAboutSection;

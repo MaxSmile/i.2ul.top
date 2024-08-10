@@ -1,8 +1,8 @@
-import SocialMedia from "./SocialMedia";
+// /src/components/Clarification.jsx
 import SectionTitle from "./SectionTitle";
 import about from "../data/about.json";
 
-const Clarification = () => {
+const ClarificationSection = () => {
     return (
         <section className="py-24" id="clarification">
             <div className="container mx-auto px-4">
@@ -50,7 +50,6 @@ const Clarification = () => {
                                 While anonymous creation of short URLs is supported and works perfectly for simple needs, an account offers enhanced control and customization for users who require more advanced features.
                             </p>
                         </div>
-                        {/* <SocialMedia className="mt-6 md:mt-10"/> */}
                     </div>
                 </div>
             </div>
@@ -58,4 +57,4 @@ const Clarification = () => {
     );
 };
 
-export default Clarification;
+export default ClarificationSection;

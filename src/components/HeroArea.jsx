@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode.react';
 import about from "../data/about.json";
-import { IoCopyOutline } from 'react-icons/io5';
 
-const HeroArea = () => {
-    const [url, setUrl] = useState('');
-    const [result, setResult] = useState('');
+// Constants
+const API_WRITE_SHRTN_DATA = process.env.API_WRITE_SHRTN_DATA || 'http://localhost:3001/urls';
+const BASE_URL = process.env.BASE_URL || 'https://2ul.top';
+const CLIENT_URL = process.env.CLIENT_URL || 'https://client.2ul.top';
+
+const HeroAreaSection = () => {
+    const [url, setUrl] = useState('https://vasilkoff.com/portfolio');
+    const [resultingUrl, setResultingUrl] = useState('');
     const [isError, setIsError] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!isValidURL(url)) {
+            alert("Please enter a valid URL.");
+            return;
+        }
         try {
-            const response = await fetch('https://api.2ul.top/urls', {
+            const response = await fetch(API_WRITE_SHRTN_DATA, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,21 +31,34 @@ const HeroArea = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                setResult(data.mappingID);
+                setResultingUrl(data.mappingID);
                 setIsError(false);
             } else {
                 const errorData = await response.json();
-                setResult(`Error: ${errorData.error}`);
+                setResultingUrl(`Error: ${errorData.error}`);
                 setIsError(true);
             }
         } catch (error) {
-            setResult(`Error: ${error.message}`);
+            setResultingUrl(`Error: ${error.message}`);
             setIsError(true);
         }
     };
 
+    const isValidURL = (url) => {
+        const urlPattern = new RegExp(
+            '^(https?:\\/\\/)?' + // validate protocol
+            '((([a-zA-Z0-9$\\-_@.&+!*\\(\\),])|([a-zA-Z0-9][-a-zA-Z0-9]{0,61}[a-zA-Z0-9])\\.)+[a-zA-Z]{2,})' + // domain name
+            '(\\:\\d{1,5})?' + // port (optional)
+            '(\\/[-a-zA-Z0-9()@:%_+.~#?&//=]*)?' + // path (optional)
+            '(\\?[;&a-zA-Z0-9%_+.~#?&//=]*)?' + // query string (optional)
+            '(\\#[-a-zA-Z0-9_]*)?$', // fragment locator (optional)
+            'i'
+        );
+        return !!urlPattern.test(url);
+    };
+
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(`https://2ul.top/${result}`).then(() => {
+        navigator.clipboard.writeText(`${BASE_URL}/${resultingUrl}`).then(() => {
             alert('Copied to clipboard!');
         }).catch((err) => {
             console.error('Error copying to clipboard', err);
@@ -46,58 +67,90 @@ const HeroArea = () => {
 
     return (
         <section className="py-24" id="clarification">
+            <p className="alert-error">
+                {about.name}
+            </p>
             <div className="container mx-auto p-4">
-                <h2 className="text-2xl sm:text-[45px] md:text-[55px] font-light mt-16">
+
+                <h1 className="text-xl sm:text-[45px] md:text-[55px] font-light mt-16">
                     Shorten Your URLs
-                </h2>
-                <h1 className="tracking-4 mt-6 sm:mt-4 font-light">
-                    Transform long, unwieldy URLs into concise, shareable links with {about.name} - Free URL Shortener
                 </h1>
+                <h2 className="tracking-4 p-8 sm:mt-4 font-light text-lg">
+                    Transform long, unwieldy URLs into concise, shareable links with {about.name}
+                </h2>
+                <h3 className="tracking-4 font-normal text-xl">
+                    Free URL Shortener with Premium Features
+                </h3>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                    <div>
-                        <form className="flex flex-col items-center gap-4 mt-6" onSubmit={handleSubmit}>
+                    <div className='bg-turn-right-arrow pt-2 mt-8 pl-16'>
+                        <p className="text-lg font-light">
+                            Put your long URL in the box below
+                        </p>
+                        <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
                             <input
                                 type="text"
                                 placeholder="Enter your long URL here..."
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
-                                className="p-2 border border-gray-300 rounded w-full md:w-96"
+                                className="p-2 border-2 border-dark rounded w-full md:w-96"
                             />
-                            <button type="submit" className="p-2 bg-blue-600 text-white rounded hover:bg-blue-500 mt-4">
+                            <button type="submit" className="button-teal mt-4">
                                 Shorten URL
                             </button>
-                            <a href="https://client.2ul.top?reason=custom" className="text-blue-600 mt-2">
-                                Would you like to use a custom name?
-                            </a>
+                            <p className="text-lg font-light">
+                                <span className="text-red-500">*</span> Please note that 2ul.top does not validate your links!
+                                It can have any protocol and domain - it is solely your responsibility to ensure that the link is valid.
+                            </p>
                         </form>
+
+
                     </div>
-                    <div>
-                        {result && (
-                            <div className="mt-4 text-lg text-center">
-                                {isError ? (
-                                    <span className="text-red-500">{result}</span>
-                                ) : (
-                                    <div className="flex items-center">
-                                        <span className="p-0 rounded w-full md:w-96 mr-2 text-gray-600">
-                                            2UL.top/<span className="text-blue-600">{result}</span>
-                                        </span>
-                                        <IoCopyOutline size={20} title='Copy' className="cursor-pointer" onClick={copyToClipboard} />
+                    <div className="px-2 ">
+                        <div className="ml-8 mb-8 ">
+                            {resultingUrl && (
+                                <div className="text-lg text-left ">
+                                    {isError ? (
+                                        <div className="alert-error">{resultingUrl}</div>
+                                    ) : (
+                                        <>
+                                            <div className="items-center bg-swirly-arrow pb-16" >
+                                                <div className="ml-24 border-2 border-dark py-2 px-4 rounded bg-white w-3/4">
+                                                    <span className="text-dark">{BASE_URL}/</span><span className="text-blue-600">{resultingUrl}</span>
+                                                </div>
+                                                <div className="text-center ml-24">
+
+                                                    <button onClick={copyToClipboard} className='button-teal mt-4'>Copy Result</button>
+                                                </div>
+
+                                            </div>
+                                            <a href={`${CLIENT_URL}?reason=custom-name`} className="text-blue-600 pl-8 hover:underline">
+                                                Would you like to use a custom short code name?
+                                            </a>
+                                        </>
+
+                                    )}
+                                </div>
+                            )}
+                            <div className='mt-4'>
+                                {!isError && resultingUrl && (
+                                    <div className="flex flex-col items-center bg-white p-8 rounded border border-light border-dashed">
+                                        <QRCode value={`${BASE_URL}/${resultingUrl}`} fgColor='#1C546A' renderAs='svg' size={256} />
+                                        <p className="mt-6 pt-6 text-lg text-center text-dark">QR code contains the shortened URL</p>
                                     </div>
                                 )}
                             </div>
-                        )}
-                        <div className='mt-4 flex justify-center'>
-                            {!isError && <QRCode value={`https://2ul.top/${result}`} size={256} />}
                         </div>
                     </div>
                 </div>
-                <p className="mt-4 text-gray-600 text-center">QR code contains the shortened URL</p>
+
                 <div>
                     <h2 className="text-2xl sm:text-[45px] md:text-[55px] font-light mt-16">
                         Simplify Your Life
                     </h2>
-                    <p className="mt-4 text-gray-600">
-                        2UL.top is a free tool to shorten URLs and generate short links. Our URL shortener allows you to easily convert long URLs into short, manageable links that are easy to share.
+                    <p className="mt-8 text-gray-600 text-lg">
+                        {about.name} is a free tool to shorten URLs and generate short links.
+                        This URL shortener allows you to easily convert long URLs into short, manageable links that are easy to share.
                     </p>
                 </div>
             </div>
@@ -105,4 +158,4 @@ const HeroArea = () => {
     );
 };
 
-export default HeroArea;
+export default HeroAreaSection;

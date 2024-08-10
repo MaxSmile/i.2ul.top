@@ -1,15 +1,14 @@
 import Link from 'next/link';
 import Image from "next/image";
 
-const Logo = ({className}) => {
+const Logo = ({className, chain=true}) => {
     return (
         <Link href="/" className={`leading-0 inline-block ${className ?? ""}`}>
                 <Image
-                    alt="2ul.top logo"
-                    className="rounded-full"
+                    alt="2UL.top logo"
                     width={60}
                     height={60}
-                    src={'/2ul-top-logo.webp'}
+                    src={chain?'/2ul-chain-logo.svg':'/2ul-logo.svg'}
                 />
         </Link>
     );

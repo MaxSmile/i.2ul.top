@@ -2,11 +2,16 @@
 import { useRouter } from 'next/router';
 import Layout from './_layout';
 import { useEffect } from 'react';
+import RedirectionView from '../components/RedirectionView';
+
+
+const API_URL = process.env.API_GET_REDIRECT || 'http://localhost:3001/urls';
+const REDIRECT_DELAY_TIME = process.env.REDIRECT_DELAY_TIME || 15 * 1000;
 
 export default function CodePage() {
   const router = useRouter();
   const { code } = router.query;
-
+ 
   useEffect(() => {
     if (code) {
       console.log("query", router.query);
@@ -16,9 +21,7 @@ export default function CodePage() {
   return (
     <Layout>
       <div className="flex flex-col justify-center items-center min-h-screen bg-white">
-        {code ? (
-          <p className="text-3xl font-bold">Code: {code}</p>
-        ) : (
+        {code ? <RedirectionView code={code} /> : (
           <p className="text-3xl font-bold">Loading...</p>
         )}
       </div>
