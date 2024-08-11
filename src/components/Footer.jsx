@@ -13,13 +13,12 @@ const Footer = () => {
             <div className="container">
                 <div className="text-center lg:text-left lg:flex justify-between items-center">
                     <div className="flex justify-between items-center">
-                        <Logo chain={false} className={'pr-6'}/><p>{about.name} - Free URL Shortener
+                        <Logo chain={false} className={'pr-4'}/><p>{about.name} - Free URL Shortener
                         <a href="https://github.com/MaxSmile/2ul.top" target="_blank"><FaGithub className="inline ml-2" /> <span className="text-xs text-gray-500 hover:underline">v.{version} </span> </a>
                         </p>
-                        
                     </div>
                     
-                    <p>
+                    <p className="text-gray-500 mt-4 lg:mt-0">
                     {/* <Navbar/> */}
                     {/*  */}
                     {/* Copyright */}

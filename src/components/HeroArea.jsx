@@ -66,16 +66,13 @@ const HeroAreaSection = () => {
     };
 
     return (
-        <section className="py-24" id="clarification">
-            <p className="alert-error">
-                {about.name}
-            </p>
-            <div className="container mx-auto p-4">
+        <section className="py-8 lg:py-24" id="clarification">
+            <div className="container mx-auto">
 
-                <h1 className="text-xl sm:text-[45px] md:text-[55px] font-light mt-16">
+                <h1 className="text-xl lg:text-3xl font-light mt-16">
                     Shorten Your URLs
                 </h1>
-                <h2 className="tracking-4 p-8 sm:mt-4 font-light text-lg">
+                <h2 className="tracking-4 py-4 lg:py-8 font-light  text-sm lg:text-2xl">
                     Transform long, unwieldy URLs into concise, shareable links with {about.name}
                 </h2>
                 <h3 className="tracking-4 font-normal text-xl">
@@ -83,31 +80,34 @@ const HeroAreaSection = () => {
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                    <div className='bg-turn-right-arrow pt-2 mt-8 pl-16'>
-                        <p className="text-lg font-light">
+                    <div className="bg-turn-right-arrow ">
+                        <p className="text-base lg:text-lg font-light ml-8 mt-3">
                             Put your long URL in the box below
                         </p>
-                        <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                placeholder="Enter your long URL here..."
-                                value={url}
-                                onChange={(e) => setUrl(e.target.value)}
-                                className="p-2 border-2 border-dark rounded w-full md:w-96"
-                            />
-                            <button type="submit" className="button-teal mt-4">
-                                Shorten URL
-                            </button>
-                            <p className="text-lg font-light">
-                                <span className="text-red-500">*</span> Please note that 2ul.top does not validate your links!
-                                It can have any protocol and domain - it is solely your responsibility to ensure that the link is valid.
-                            </p>
-                        </form>
+                        <div className='lg:pl-16  mt-16 lg:mt-0'>
+
+                            <form className="flex flex-col items-center gap-4" onSubmit={handleSubmit}>
+                                <input
+                                    type="text"
+                                    placeholder="Enter your long URL here..."
+                                    value={url}
+                                    onChange={(e) => setUrl(e.target.value)}
+                                    className="p-2 border-2 border-dark rounded w-full mt-0 lg:w-3/4 md:ml-2"
+                                />
+                                <button type="submit" className="button-teal mt-4">
+                                    Shorten URL
+                                </button>
+                                <p className="text-lg font-light">
+                                    <span className="text-red-500">*</span> Please note that 2ul.top does not validate your links!
+                                    It can have any protocol and domain - it is solely your responsibility to ensure that the link is valid.
+                                </p>
+                            </form>
 
 
+                        </div>
                     </div>
-                    <div className="px-2 ">
-                        <div className="ml-8 mb-8 ">
+                    <div className="px-2 md:px-0">
+                        <div className="mb-8 ">
                             {resultingUrl && (
                                 <div className="text-lg text-left ">
                                     {isError ? (
@@ -115,7 +115,7 @@ const HeroAreaSection = () => {
                                     ) : (
                                         <>
                                             <div className="items-center bg-swirly-arrow pb-16" >
-                                                <div className="ml-24 border-2 border-dark py-2 px-4 rounded bg-white w-3/4">
+                                                <div className="ml-24 border-2 border-dark py-2 px-4 rounded bg-white w-3/4 overflow-auto">
                                                     <span className="text-dark">{BASE_URL}/</span><span className="text-blue-600">{resultingUrl}</span>
                                                 </div>
                                                 <div className="text-center ml-24">
