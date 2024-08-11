@@ -6,7 +6,7 @@ const ClarificationSection = () => {
     return (
         <section className="py-24" id="clarification">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-8">
                     <div>
                         <SectionTitle
                             title={`Why choose a free short URL with ${about.name}?`}

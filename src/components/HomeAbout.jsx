@@ -13,15 +13,16 @@ const HomeAboutSection = () => {
 
                 <div className="md:grid grid-cols-12 items-center">
                     <div className="col-span-4 sm:text-center md:text-left">
-                        <div className="inline-block md:block leading-none drop-shadow-thumb relative sm:before:absolute sm:before:bottom-[-5px] lg:before:bottom-[-11px] sm:before:right-[-6px] sm:before:border-2 sm:before:border-gray-200 sm:before:h-full sm:before:w-[calc(100%-5px)] sm:before:rounded-br-3xl">
-                            <Image
+                        {/* <div className="inline-block md:block leading-none drop-shadow-thumb relative sm:before:absolute sm:before:bottom-[-5px] lg:before:bottom-[-11px] sm:before:right-[-6px] sm:before:border-2 sm:before:border-gray-200 sm:before:h-full sm:before:w-[calc(100%-5px)] sm:before:rounded-br-3xl">
+                           
+                        </div> */}
+                        <Image
                                 width={350}
                                 height={350}
                                 className="rounded-md"
-                                src={'/2ul-top-logo.webp'}
+                                src={'/2ul-logo.svg'}
                                 alt="2ul.top logo"
                             />
-                        </div>
                     </div>
 
                     <div className="col-start-6 col-end-13">

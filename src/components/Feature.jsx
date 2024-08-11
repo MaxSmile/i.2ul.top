@@ -14,13 +14,13 @@ const icons = (idx) => {
         return <BiAbacus />;
     }
 };
-const Feature = ({ thumb, title, desc, className }) => {
+const Feature = ({ title, desc, className }) => {
     return (
-        <div className={`service group relative flex px-3 py-5 rounded-md duration-300 hover:bg-gray-50 ${serviceBefore} ${serviceAfter} ${className ?? ""}`}>
+        <div className={`service group relative flex px-3 py-5 rounded-md duration-300 hover:bg-gray-50  ${className ?? ""}`}>
             {/* Feature Icon */}
-            <div className="mr-4 bg-white group-hover:bg-gray-50 relative flex-shrink-0 self-start w-[50px] md:w-auto">
+            {/* <div className="mr-4 bg-white group-hover:bg-gray-50 relative flex-shrink-0 self-start w-[50px] md:w-auto">
                 {icons(thumb)}
-            </div>
+            </div> */}
 
             {/* Service Content */}
             <div>
