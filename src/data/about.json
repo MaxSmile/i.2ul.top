@@ -1,31 +1,9 @@
 {
   "name": "2UL.top",
   "url": "https://2ul.top",
-  "bio": "<p>For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I'd get kicked out on the spot.</p> <p>But who knows, maybe that would be the best thing for me. He'd fall right off his desk! And it's a funny sort of business to be sitting up there at your desk, <br/> talking down at your subordinates. I ought to just try that witht my boss; I'd get kicked out on the spot. But who knows, maybe that would be the best thing for me. He'd fall right off his desk! And it's a funny sort of business to be sitting up there at your desk, talking down at your subordinates.</p>",
-  "socialMedia": [
-    {
-      "id": 1,
-      "media": "facebook",
-      "icon": "FaFacebookF",
-      "link": "https://fb.com/username"
-    },
-    {
-      "id": 2,
-      "media": "twitter",
-      "icon": "FaTwitter",
-      "link": "https://twitter.com/username"
-    },
-    {
-      "id": 3,
-      "media": "linkedin",
-      "icon": "FaLinkedinIn",
-      "link": "https://linkedin.com/in/username"
-    },
-    {
-      "id": 4,
-      "media": "github",
-      "icon": "FaGithub",
-      "link": "https://github.com/username"
-    }
-  ]
+  "HomeH1": "Shorten Your URLs",
+  "HomeH2": "Transform long, unwieldy URLs into concise, shareable links with",
+  "HomeH3": "Free URL Shortener with Premium Features",
+  "ShortAbout": "is a free tool to shorten URLs and generate  short links. This URL shortener allows you to easily convert long URLs into short, manageable links that are easy to share.",
+  "Moto": "Shorten Your URLs - Simplify Your Life",
 }
