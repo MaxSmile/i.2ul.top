@@ -4,6 +4,7 @@ import { IoIosArrowUp } from 'react-icons/io'
 import about from '../data/about.json'
 import version from '../version.js'
 import { FaGithub } from 'react-icons/fa6'
+import { API_BASE_URL } from '../data/constants.js'
 
 const Footer = () => {
     return (
@@ -13,15 +14,14 @@ const Footer = () => {
                     <div className="flex justify-between items-center">
                         <Logo chain={false} className={'pr-4'} />
                         <p>
-                            {about.name} - Free URL Shortener
+                            {about.name} - <a href={API_BASE_URL} target="_blank">Free URL Shortener</a>
                             <a
                                 href="https://github.com/MaxSmile/2ul.top"
                                 target="_blank"
                             >
-                                <FaGithub className="inline ml-2" />{' '}
-                                <span className="text-xs text-gray-500 hover:underline">
-                                    v.{version}{' '}
-                                </span>{' '}
+                                <FaGithub className="inline ml-2" />&nbsp;<span 
+                                    className="text-xs text-gray-500 hover:underline">
+                                    v.{version}</span>
                             </a>
                         </p>
                     </div>
@@ -36,7 +36,6 @@ const Footer = () => {
                             Vasilkoff Ltd - Web Development and Design
                         </a>
                     </p>
-                    {/* <SocialMedia className="mt-10" /> */}
                 </div>
             </div>
 

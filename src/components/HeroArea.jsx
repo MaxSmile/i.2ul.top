@@ -4,10 +4,7 @@ import React, { useState } from 'react'
 import QRCode from 'qrcode.react'
 import about from '../data/about.json'
 import UrlForm from './shortening/UrlForm'
-
-// Constants
-const BASE_URL = process.env.BASE_URL || 'https://2ul.top'
-const CLIENT_URL = process.env.CLIENT_URL || 'https://client.2ul.top'
+import { BASE_URL, CLIENT_URL } from '../data/constants'
 
 const HeroAreaSection = () => {
     const [resultingUrl, setResultingUrl] = useState('')

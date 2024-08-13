@@ -1,10 +1,10 @@
 // src/components/shortening/UrlForm.jsx
 
 import React, { useState } from 'react'
+import { API_WRITE_SHRTN_DATA } from '../../data/constants'
 
 
-const API_WRITE_SHRTN_DATA =
-  process.env.API_WRITE_SHRTN_DATA || 'http://localhost:3001/urls'
+
 
 const UrlForm = ({ onResult }) => {
   const [url, setUrl] = useState('https://vasilkoff.com/portfolio')
