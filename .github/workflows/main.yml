@@ -66,3 +66,4 @@ jobs:
 
           echo "Checking PM2 status"
           pm2 status
+          pm2 start ecosystem.config.js --env production

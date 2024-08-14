@@ -1,37 +1,53 @@
-import { useState } from 'react';
+// src/components/RedirectionView.jsx
+"use client";
+
+import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
+import { API_BASE_URL, API_READ_SHRTN_DATA, REDIRECT_DELAY_TIME } from '../data/constants';
 
-const API_URL = process.env.API_GET_REDIRECT || 'http://localhost:3001/urls';
-const REDIRECT_DELAY_TIME = process.env.REDIRECT_DELAY_TIME || 15 * 1000;
+const API_URL = API_BASE_URL + API_READ_SHRTN_DATA;
 
 function RedirectionView({ code }) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
-  const { data, error } = useSWR(`${API_URL}/${code}`, fetcher);
+  const { data, error } = useSWR(`${API_URL}${code}`, fetcher);
   const [countdown, setCountdown] = useState(REDIRECT_DELAY_TIME / 1000);
   const [showManualRedirect, setShowManualRedirect] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   // Timer logic
-  if (data && data.originalUrl && countdown > 0) {
-    setTimeout(() => {
-      setCountdown(countdown - 1);
-    }, 1000);
-  }
+  useEffect(() => {
+    if (data && data.originalUrl && countdown > 0) {
+      const timer = setTimeout(() => {
+        setCountdown((prev) => prev - 1);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [data, countdown]);
 
   // Redirection logic
-  if (data && data.originalUrl && countdown === 0 && !showManualRedirect) {
-    router.push(data.originalUrl).catch(() => {
-      setShowManualRedirect(true);
-    });
-  }
+  useEffect(() => {
+    if (data && data.originalUrl && countdown === 0 && !showManualRedirect) {
+      router.push(data.originalUrl).catch(() => {
+        setShowManualRedirect(true);
+      });
+    }
+  }, [data, countdown, router, showManualRedirect]);
+
+  // Set loading state
+  useEffect(() => {
+    if (data !== undefined) {
+      setIsLoading(false);
+    }
+  }, [data]);
 
   return (
     <div className="flex flex-col items-center min-h-screen justify-center bg-white">
       {error ? (
         <div className="text-red-500">An error occurred: {error.message}</div>
-      ) : !data ? (
-        <div className="text-gray-500">Loading...</div>
+      ) : isLoading ? (
+        <div className="text-gray-500">Loading {code}...</div>
       ) : data.originalUrl ? (
         <>
           <h1 className="text-3xl font-bold mb-4">

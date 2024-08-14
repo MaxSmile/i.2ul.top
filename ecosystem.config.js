@@ -14,7 +14,7 @@ module.exports = {
             BASE_URL: 'https://2ul.top',
             CLIENT_URL: 'https://client.2ul.top',
             API_BASE_URL: 'https://api.2ul.top',
-            API_READ_SHRTN_DATA: '/urls',
+            API_READ_SHRTN_DATA: '/urls/',
             API_WRITE_SHRTN_DATA: '/urls',
             REDIRECT_DELAY_TIME: 15000
           }

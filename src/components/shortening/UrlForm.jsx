@@ -1,18 +1,19 @@
 // src/components/shortening/UrlForm.jsx
 
 import React, { useState } from 'react'
-import { API_WRITE_SHRTN_DATA } from '../../data/constants'
+import { API_BASE_URL, API_WRITE_SHRTN_DATA } from '../../data/constants'
 
 
-
+const API_URL = API_BASE_URL + API_WRITE_SHRTN_DATA;
 
 const UrlForm = ({ onResult }) => {
-  const [url, setUrl] = useState('https://vasilkoff.com/portfolio')
+  const [url, setUrl] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(API_WRITE_SHRTN_DATA, {
+      console.log("fetch POST", API_URL)
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
