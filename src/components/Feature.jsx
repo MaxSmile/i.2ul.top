@@ -19,7 +19,6 @@ const serviceBefore = "before:absolute before:left-10 before:top-9 before:h-[cal
 const serviceAfter = "after:absolute after:left-9 after:bottom-4 after:h-[10px] after:w-[10px] after:rounded-full after:bg-gray-300";
 
 Feature.propTypes = {
-    thumb: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
 }
