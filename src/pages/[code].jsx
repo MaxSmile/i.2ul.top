@@ -22,7 +22,7 @@ export default function CodePage() {
     <Layout>
       <div className="flex flex-col justify-center items-center min-h-screen bg-white">
         {code ? <RedirectionView code={code} /> : (
-          <p className="text-3xl font-bold">Loading...</p>
+          <div className="text-gray-500">Loading...</div>
         )}
       </div>
     </Layout>
