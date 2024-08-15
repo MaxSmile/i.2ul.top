@@ -31,8 +31,7 @@ function Redirecting({ data, countdown, showManualRedirect }) {
       </div>
       {showManualRedirect && (
         <p className="mt-4">
-          If you are not redirected, please go to&nbsp;
-          <a
+          If you are not redirected, please go to&nbsp;<a
             href={originalUrl}
             className="text-blue-500 underline"
             target="_blank"
