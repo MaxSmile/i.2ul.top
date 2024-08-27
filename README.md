@@ -126,8 +126,8 @@ All documentation for the 2ul.top project is located in the `/docs` folder and c
 
 - **[API Documentation](https://2ul.top/i/api)** (`/docs/api.md`)
 - **[FAQ](https://2ul.top/i/faq)** (`/docs/faq.md`)
-- **[Privacy Policy](https://2ul.top/i/privacy_policy)** (`/docs/privacy_policy.md`)
-- **[Terms of Service](https://2ul.top/i/terms_of_service)** (`/docs/terms_of_service.md`)
+- **[Privacy Policy](https://2ul.top/i/privacy)** (`/docs/privacy.md`)
+- **[Terms of Service](https://2ul.top/i/terms)** (`/docs/terms.md`)
 - **[User Guide](https://2ul.top/i/user_guide)** (`/docs/user_guide.md`)
 - **[Widget Integration Guide](https://2ul.top/i/widget_integration)** (`/docs/widget_integration.md`)
 
