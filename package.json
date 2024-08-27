@@ -1,6 +1,6 @@
 {
   "name": "2ul-next-preact",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -13,9 +13,12 @@
     "build-major": "yarn version --major && genversion src/version.js && next build"
   },
   "dependencies": {
+    "fs": "^0.0.1-security",
     "genversion": "^3.2.0",
+    "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.1",
     "next": "^14.2.5",
+    "path": "^0.12.7",
     "prop-types": "^15.8.1",
     "qrcode.react": "^3.1.0",
     "react": "^18.3.1",
@@ -23,6 +26,8 @@
     "react-icons": "^5.2.1",
     "react-modal-video": "^2.0.2",
     "react-scroll": "^1.9.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "swr": "^2.2.5"
   },
   "devDependencies": {
