@@ -97,7 +97,7 @@ const HeroAreaSection = () => {
                 </div>
 
                 <div>
-                    <h2 className="text-2xl sm:text-[45px] md:text-[55px] font-light mt-16">
+                    <h2 className="text-2xl font-light mt-16">
                         {about.Moto}
                     </h2>
                     <p className="mt-8 text-gray-600 text-lg">
