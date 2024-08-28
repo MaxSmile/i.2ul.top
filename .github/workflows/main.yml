@@ -64,6 +64,11 @@ jobs:
           echo "Sourcing NVM"
           source ~/.nvm/nvm.sh
 
+          echo "Changing directory to /var/www/2ul.top"
+          cd /var/www/2ul.to
+
           echo "Checking PM2 status"
-          pm2 status
-          pm2 start ecosystem.config.js --env production
+          pm2 status || true
+
+          echo "Ensuring PM2 process is running"
+          pm2 describe ecosystem.config.js > /dev/null || pm2 start ecosystem.config.js --env production
