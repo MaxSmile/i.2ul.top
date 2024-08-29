@@ -49,7 +49,7 @@ jobs:
           pm2 stop ecosystem.config.js || true
 
           echo "Starting PM2 process"
-          pm2 delete all
+          #pm2 delete all
           pm2 start /var/www/2ul.top/ecosystem.config.js --env production
 
           echo "Saving PM2 process list"
