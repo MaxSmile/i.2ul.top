@@ -65,7 +65,7 @@ jobs:
           source ~/.nvm/nvm.sh
 
           echo "Changing directory to /var/www/2ul.top"
-          cd /var/www/2ul.to
+          cd /var/www/2ul.top
 
           echo "Checking PM2 status"
           pm2 status || true
