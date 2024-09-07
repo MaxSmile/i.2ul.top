@@ -138,25 +138,16 @@ All documentation for the 2ul.top project is located in the `/docs` folder and c
 
 ### TODO
 
-- [x] Add version display at the bottom
-- [x] Add GitHub link
-- [x] Add About page
-- [ ] Add FAQ 
-- [ ] Add Contact page
-- [x] Add Privacy policy
-- [x] Add Terms of service
-- [x] Add Pricing page
+- [ ] Deployment script must be reliable and trustworthy 
+- [ ] Top menu reorganized
+- [ ] Add footer menu
+- [ ] Make working Pricing page
 - [ ] Add validations to the form (empty entry, too long, invalid URL)
 - [ ] Add Google Analytics
 - [ ] Add Google Tag Manager
-- [ ] Add Open Graph meta tags
-- [ ] Add Twitter meta tags
-- [ ] Add Facebook meta tags
-- [ ] Add LinkedIn meta tags
-- [ ] Make Logo SVG
-- [ ] Make redirect page
-- [ ] Make QR code page
-- [ ] Add Features page
+- [ ] Make redirect page to have ads
+- [ ] Make QR code dedicated page
+- [ ] Add QR explanation to about and user guide pages
 
 
 ### License
