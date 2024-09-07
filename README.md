@@ -1,7 +1,8 @@
 # 2ul.top URL Shortener 
 
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/MaxSmile/2ul.top/ci.yml)
+![Build Status](https://img.shields.io/github/actions/workflow/status/MaxSmile/2ul.top/main.yml)
+
 ![License](https://img.shields.io/github/license/MaxSmile/2ul.top)
 
 ## Project Overview

@@ -49,7 +49,8 @@ jobs:
           pm2 stop ecosystem.config.js || true
 
           echo "Starting PM2 process"
-          pm2 start ecosystem.config.js --env production
+          #pm2 delete all
+          pm2 start /var/www/2ul.top/ecosystem.config.js --env production
 
           echo "Saving PM2 process list"
           pm2 save
@@ -64,6 +65,11 @@ jobs:
           echo "Sourcing NVM"
           source ~/.nvm/nvm.sh
 
+          echo "Changing directory to /var/www/2ul.top"
+          cd /var/www/2ul.top
+
           echo "Checking PM2 status"
-          pm2 status
-          pm2 start ecosystem.config.js --env production
+          pm2 status || true
+
+          echo "Ensuring PM2 process is running"
+          pm2 describe ecosystem.config.js > /dev/null || pm2 start ecosystem.config.js --env production
