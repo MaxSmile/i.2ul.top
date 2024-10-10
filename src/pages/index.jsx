@@ -1,10 +1,11 @@
 import Head from 'next/head'
-import HeroArea from '../components/HeroArea'
-import Features from '../components/Features'
-import Pricing from '../components/Pricing'
-import HomeAboutSection from '../components/HomeAbout'
-import ClarificationSection from '../components/Clarification'
 import Layout from './_layout'
+import HeroSection from '../components/HeroSection'
+import FeaturesSection from '../components/FeaturesSection'
+import UseCasesSection from '../components/UseCasesSection'
+import AdvancedAnalyticsSection from '../components/AdvancedAnalyticsSection'
+import CustomRedirectionSection from '../components/CustomRedirectionSection'
+import FinalCTASection from '../components/FinalCTASection'
 
 const Home = () => {
     return (
@@ -46,10 +47,14 @@ const Home = () => {
                     }}
                 />
             </Head>
-            <HeroArea />
-            <Features />
-            <HomeAboutSection />
-            <ClarificationSection />
+            
+            <HeroSection />
+            <FeaturesSection /> 
+            <UseCasesSection />
+            <AdvancedAnalyticsSection />
+            <CustomRedirectionSection />
+            <FinalCTASection />
+
         </Layout>
     )
 }

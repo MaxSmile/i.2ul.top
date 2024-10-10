@@ -29,7 +29,6 @@ const PricingItem = ({ plan, price, features, className }) => {
         ))}
       </ul>
 
-      {/* Call to Action */}
       <button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500">Choose Plan</button>
     </div>
   );
