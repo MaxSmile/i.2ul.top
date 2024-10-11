@@ -93,5 +93,5 @@ ul, ol {
 }
 
 .button-teal {
-    @apply py-2 px-4 bg-dark text-yellow-100 text-lg rounded hover:bg-teal-600;
+    @apply py-2 px-4 bg-dark text-yellow-100 text-lg rounded hover:bg-teal-600 hover:text-white duration-300 text-center;
 }

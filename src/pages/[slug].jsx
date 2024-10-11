@@ -7,7 +7,7 @@ import { remark } from "remark";
 import html from "remark-html";
 import { useRouter } from "next/router";
 import { notFound } from "next/navigation";
-import Layout from "../_layout";
+import Layout from "./_layout";
 
 import markdownStyles from "./markdown.module.css";
 import Head from "next/head";
